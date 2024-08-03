@@ -1,0 +1,30 @@
+- id: rust-fmt
+  name: rust formatting
+  description: format Rust code
+  entry: cargo fmt
+  language: system
+  types: [rust]
+  args: ["--"]
+- id: cargo-check
+  name: cargo check
+  description: check the current package
+  entry: cargo check
+  language: system
+  types: [rust]
+  pass_filenames: false
+- id: cargo-test
+  name: cargo test
+  description: execute unit and integration tests for a packages
+  entry: cargo test
+  stages: [push]
+  language: system
+  types: [rust]
+  pass_filenames: false
+- id: cargo-clippy
+  name: cargo clippy
+  description: lint Rust code
+  entry: cargo clippy
+  language: system
+  args: ["--", "-D", "warnings"]
+  types: [rust]
+  pass_filenames: false
