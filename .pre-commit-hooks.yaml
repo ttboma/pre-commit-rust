@@ -25,6 +25,6 @@
   description: lint Rust code
   entry: cargo clippy
   language: system
-  args: ["--", "-D", "warnings"]
+  args: ["--workspace", "--all-targets", "--", "--deny", "warnings"]
   types: [rust]
   pass_filenames: false
