@@ -28,3 +28,11 @@
   args: ["--workspace", "--all-targets", "--", "--deny", "warnings"]
   types: [rust]
   pass_filenames: false
+- id: git-cliff
+  name: git-cliff
+  description: generate changelog files from the Git history by utilizing conventional commits as well as regex-powered custom parsers
+  entry: git cliff
+  language: system
+  args: ["-o", "CHANGELOG.md", "--", "--deny", "warnings"]
+  types: [rust]
+  pass_filenames: false
